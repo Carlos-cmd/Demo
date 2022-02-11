@@ -1,0 +1,21 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /ruike
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tables?characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 5
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+
+logging:
+  level:
+    cn.sias.community: warn
