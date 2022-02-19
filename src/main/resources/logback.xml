@@ -77,11 +77,11 @@
             <charset>utf-8</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>warn</level>
+            <level>debug</level>
         </filter>
     </appender>
 
-    <logger name="cn.sias.community.ruike" level="warn"/>
+    <logger name="cn.sias.community.ruike" level="debug"/>
 
     <root level="info">
         <appender-ref ref="FILE_ERROR"/>

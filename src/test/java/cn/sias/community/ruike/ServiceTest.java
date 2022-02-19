@@ -15,9 +15,9 @@ public class ServiceTest {
     private DiscussPostService discussPostService;
     @Test
     void discussTest(){
-        List<DiscussPost> discussPosts = discussPostService.selectDisscussPosts(0, 0, 10);
-        int row = discussPostService.selectDisscussPostRows(149);
-        System.out.println(row);
+//        List<DiscussPost> discussPosts = discussPostService.selectDisscussPosts(0, 0, 10);
+//        int row = discussPostService.selectDisscussPostRows(149);
+//        System.out.println(row);
 
     }
 

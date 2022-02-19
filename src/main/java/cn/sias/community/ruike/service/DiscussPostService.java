@@ -11,4 +11,10 @@ public interface DiscussPostService {
 
     int selectDisscussPostRows(int userId);
 
+    int addDiscussPost(DiscussPost post);
+
+    DiscussPost findDiscussPostById(int id);
+
+    public int updateCommentCount(int id,int commentCount);
+
 }

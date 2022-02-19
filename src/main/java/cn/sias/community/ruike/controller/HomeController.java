@@ -4,7 +4,9 @@ import cn.sias.community.ruike.entity.DiscussPost;
 import cn.sias.community.ruike.entity.Page;
 import cn.sias.community.ruike.entity.User;
 import cn.sias.community.ruike.service.DiscussPostService;
+import cn.sias.community.ruike.service.LikeService;
 import cn.sias.community.ruike.service.UserService;
+import cn.sias.community.ruike.util.CommunityConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +19,17 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class HomeController {
+public class HomeController implements CommunityConstant {
     @Autowired
     private DiscussPostService discussPostService;
 
     @Autowired
+    private LikeService likeService;
+
+    @Autowired
     private UserService userService;
+
+
     @RequestMapping(path = "/index",method = RequestMethod.GET)
     public String getIndexPage(Model model, Page page){
         //方法调用之前，SpringMVC会自动实例化Model和Page，并且将Page注入Model
@@ -38,9 +45,22 @@ public class HomeController {
             map.put("post",post);
             User user = userService.findUserById(post.getUserId());
             map.put("user",user);
+
+            //查询帖子的赞数
+            long likeConunt = likeService.findEntityLikeCount(ENTITY_TYPE_POST, post.getId());
+            map.put("likeCount",likeConunt);
+
             list.add(map);
         }
         model.addAttribute("discussPosts",list);
         return "index";
     }
+
+    @RequestMapping(path = "/error",method = RequestMethod.GET)
+    public String getErrorPage() {
+
+        return "/error/500";
+    }
+
+
 }

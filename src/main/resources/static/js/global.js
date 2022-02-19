@@ -1,3 +1,5 @@
+var CONTEXT_PATH = "/ruike";
+
 window.alert = function(message) {
 	if(!$(".alert-box").length) {
 		$("body").append(
