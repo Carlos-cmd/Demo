@@ -1,6 +1,6 @@
 package cn.sias.community.ruike.service.serviceimpl;
 
-import cn.sias.community.ruike.dao.DisscussPostMapper;
+import cn.sias.community.ruike.dao.DiscussPostMapper;
 import cn.sias.community.ruike.entity.DiscussPost;
 import cn.sias.community.ruike.service.DiscussPostService;
 import cn.sias.community.ruike.util.SensitiveFilter;
@@ -14,19 +14,19 @@ import java.util.List;
 public class DiscussPostServiceImpl implements DiscussPostService {
 
     @Autowired
-    private DisscussPostMapper disscussPostMapper;
+    private DiscussPostMapper discussPostMapper;
 
     @Autowired
     private SensitiveFilter sensitiveFilter;
 
     @Override
     public List<DiscussPost> selectDisscussPosts(int userId, int offset, int limit) {
-        return disscussPostMapper.selectDisscussPosts(userId, offset, limit);
+        return discussPostMapper.selectDisscussPosts(userId, offset, limit);
     }
 
     @Override
     public int selectDisscussPostRows(int userId) {
-        return disscussPostMapper.selectDisscussPostRows(userId);
+        return discussPostMapper.selectDisscussPostRows(userId);
     }
 
     @Override
@@ -45,16 +45,16 @@ public class DiscussPostServiceImpl implements DiscussPostService {
 
 
 
-        return disscussPostMapper.insertDiscussPost(post);
+        return discussPostMapper.insertDiscussPost(post);
     }
 
     @Override
     public DiscussPost findDiscussPostById(int id) {
-        return disscussPostMapper.selectDiscussPostById(id);
+        return discussPostMapper.selectDiscussPostById(id);
     }
 
     @Override
     public int updateCommentCount(int id, int commentCount) {
-        return disscussPostMapper.updateCommentCount(id,commentCount);
+        return discussPostMapper.updateCommentCount(id,commentCount);
     }
 }

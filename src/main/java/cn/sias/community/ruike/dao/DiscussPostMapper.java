@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface DisscussPostMapper {
+public interface DiscussPostMapper {
     List<DiscussPost> selectDisscussPosts(int userId,int offset,int limit);
 
     //@Param注解用于给参数取别名，如果只有一个参数，并且在<if>里面使用，则必须加别名

@@ -14,6 +14,8 @@
     <name>ruike</name>
     <description>ruike community</description>
     <properties>
+            <!--指定自动导入的依赖项的版本，目前平台的es版本为5.4.1，lucene版本为6.5.1-->
+            <elasticsearch.version>6.8.23</elasticsearch.version>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
@@ -103,9 +105,21 @@
             <artifactId>spring-kafka</artifactId>
             <version>2.8.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+
+        </dependency>
 
 
     </dependencies>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!--指定自动导入的依赖项的版本，目前平台的es版本为5.4.1，lucene版本为6.5.1-->
+    <java.version>1.8</java.version>
+    <lucene.version>6.5.1</lucene.version>
+    <elasticsearch.version>5.4.1</elasticsearch.version>
 
     <build>
         <plugins>

@@ -1,7 +1,7 @@
 package cn.sias.community.ruike.service.serviceimpl;
 
 
-import cn.sias.community.ruike.dao.DisscussPostMapper;
+import cn.sias.community.ruike.dao.DiscussPostMapper;
 import cn.sias.community.ruike.dao.UserMapper;
 import cn.sias.community.ruike.entity.DiscussPost;
 import cn.sias.community.ruike.entity.User;
@@ -28,7 +28,7 @@ public class AlphaService {
     private UserMapper userMapper;
 
     @Autowired
-    private DisscussPostMapper disscussPostMapper;
+    private DiscussPostMapper discussPostMapper;
 
 //    public String find() {
 //        alphaMapper.select();
@@ -58,7 +58,7 @@ public class AlphaService {
         post.setTitle("title");
         post.setContent("新人报道");
         post.setCreateTime(new Date());
-        disscussPostMapper.insertDiscussPost(post);
+        discussPostMapper.insertDiscussPost(post);
 
 
         //人为编写错误，让事务进行回滚
@@ -93,7 +93,7 @@ public class AlphaService {
                 post.setTitle("title");
                 post.setContent("新人报道");
                 post.setCreateTime(new Date());
-                disscussPostMapper.insertDiscussPost(post);
+                discussPostMapper.insertDiscussPost(post);
 
 
                 Integer.valueOf("abc");
